@@ -13,7 +13,7 @@ import random
 print("\n\n***** Problem 1 *****")
 ## We've provided a definition of a class Student, similar to the one you may have seen in lecture. 
 ## Add a method to class Student called write_programs which accepts one optional parameter with a default value of 1, 
-#and adds the input integer to the self.num_programs instance variable.
+# and adds the input integer to the self.num_programs instance variable.
 
 class Student():
     def __init__(self, name, years_at_umich=1, programs_written=0):
