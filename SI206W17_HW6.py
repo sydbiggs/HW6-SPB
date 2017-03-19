@@ -153,7 +153,7 @@ print("\n\n***** Problem 8 *****")
 # (i.e. ["Albert","Dinesh","Euijin"]) Your result should be an filter object that points to Student instances. 
 # Save that filter iterator in a variable called long_names.
 
-long_names= filter((lambda x: len(x.name) >= 5), student_tups_list)
+long_names= filter((lambda x: len(x.name) >= 5), programmers)
 
 ## Then write code to cast the value of long_names to a list and save it in the variable long_names_list. 
 long_names_list = list(avalue for avalue in long_names)
@@ -215,27 +215,27 @@ def readfiles(list_of_filenames):
             fname.close()
     return(mylist)
 
-# Define len_check
-def len_check(agenerator):
-    for avalue in agenerator:
-        if len(avalue) > 40:
+# # Define len_check
+# def len_check(agenerator):
+#     for avalue in agenerator:
+#         if len(avalue) > 40:
 
 
 
 
-def yrange(n):
-    i = 0
-    while i < n:
-        yield i
-        i += 1
+# def yrange(n):
+#     i = 0
+#     while i < n:
+#         yield i
+#         i += 1
 
 
 
-    def fib(max):
-    a, b = 0, 1
-    while a < max:
-        yield a
-        a, b = b, a + b
+#     def fib(max):
+#     a, b = 0, 1
+#     while a < max:
+#         yield a
+#         a, b = b, a + b
 
 # Define main_filterer
 
