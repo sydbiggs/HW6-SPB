@@ -32,8 +32,8 @@ class Student():
         return this_Student.years_UM
 
     # Define the additional method here
-    def write_programs(self, optional = 1):
-        return(self.num_programs + optional)
+    def write_programs(self, optional_param = 1):
+        self.num_programs = self.num_programs + optional_param 
     
 
 #### DONE WITH STUDENT CLASS DEFINITION
@@ -167,6 +167,7 @@ print("\n\n***** Problem 9 *****")
 
 ## Note that you can use another list you have already created for this problem.
 
+# There are two ways that you could solve this: 
 # def name_length(aninstance):
 #     if len(aninstance.name) > aninstance.years_UM:
 #         return(aninstance.name)
@@ -189,7 +190,7 @@ print("\n\n***** Problem 10 *****")
 # assuming those files exist in the same directory as this program.
 
 ## Define a generator called len_check which accepts a generator of file lines and returns a 
-#generator object of all the lines it's accepted whose length is longer than 40 characters.
+# generator object of all the lines it's accepted whose length is longer than 40 characters.
 
 ## Finally, write a function called main_filterer that accepts a list of filenames (strings), and returns a generator of all the lines in those files that are longer than 40 characters. The function should invoke the other function and generator, readfiles and len_check.
 
@@ -216,32 +217,24 @@ def readfiles(list_of_filenames):
     return(mylist)
 
 # # Define len_check
-# def len_check(agenerator):
-#     for avalue in agenerator:
-#         if len(avalue) > 40:
-
-
-
-
-# def yrange(n):
-#     i = 0
-#     while i < n:
-#         yield i
-#         i += 1
-
-
-
-#     def fib(max):
-#     a, b = 0, 1
-#     while a < max:
-#         yield a
-#         a, b = b, a + b
+def len_check(agenerator): # ["line 1, ", "line 2", "line 4, "line 8"]
+    for avalue in agenerator:
+        if len(avalue) >= 40:
+            yield avalue
 
 # Define main_filterer
 
+## Finally, write a function called main_filterer that accepts a list of filenames (strings), 
+#and returns a generator of all the lines in those files that are longer than 40 characters. 
+#The function should invoke the other function and generator, readfiles and len_check.
+
+def main_filterer(list_of_filenames):
+    gen = (avalue for avalue in list_of_filenames)
+    return(len_check(gen))
 
 
-## Uncomment this code to test so you can see easily what results from your code. DO uncomment it. DO NOT delete or change it. (You can add other code above while you work, of course.)
+
+# Uncomment this code to test so you can see easily what results from your code. DO uncomment it. DO NOT delete or change it. (You can add other code above while you work, of course.)
 # provided_file_names = ["samplehw6_1.txt","samplehw6_2.txt"]
 # for ln in main_filterer(provided_file_names):
 #     print(ln.rstrip('\n'), end=" ")
